@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 
-const SearchBar = ({ term, onTermChange }) => {
+const SearchBar = ({ term, onTermChange, ontermSubmit }) => {
   return (
     <View style={styles.backgroundStyle}>
       <EvilIcons
@@ -15,6 +15,7 @@ const SearchBar = ({ term, onTermChange }) => {
       placeholder='Search'
       value={term}
       onChangeText={newTerm => onTermChange(newTerm)}
+      onEndEditing={() => ontermSubmit()}
       autoCapitalize="none"
       autoCorrect={false}
       />
