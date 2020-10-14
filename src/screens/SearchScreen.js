@@ -5,7 +5,7 @@ import yelp from '../api/yelp';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 
-const SearchScreen = ({ navigation }) => {
+const SearchScreen = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, error] = useResults();
 
@@ -26,15 +26,15 @@ const SearchScreen = ({ navigation }) => {
       />
       {error ? <Text>{error}</Text> : null}
       <ScrollView>
-      <ResultsList navigation={navigation} 
+      <ResultsList 
       results={filterResultsByPrice('$')} 
       title={'$'}
       />
-      <ResultsList navigation={navigation} 
+      <ResultsList 
       results={filterResultsByPrice('$$')} 
       title={'$$'}
       />
-      <ResultsList navigation={navigation} 
+      <ResultsList 
       results={filterResultsByPrice('$$$')} 
       title={'$$$'}
       />
